@@ -12,8 +12,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$(defaults read "${HOME}/.MacOSX/environment" PATH)
-alias e="/Users/rads/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nc"
-alias emacs="/Users/rads/Applications/Emacs.app/Contents/MacOS/Emacs"
+alias e="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nc"
+alias emacs="~/Applications/Emacs.app/Contents/MacOS/Emacs"
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
 export EDITOR="mate -w"
