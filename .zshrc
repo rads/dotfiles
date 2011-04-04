@@ -12,15 +12,13 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$(defaults read "${HOME}/.MacOSX/environment" PATH)
-alias emacs="/Users/rads/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n"
+alias emacs="/Users/rads/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nc"
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
 export EDITOR="mate -w"
 
 function git(){hub $@}
-function clj(){rlwrap clj $@}
 alias mongod="mongod run --config /etc/mongod.conf"
-alias mysqld_start="sudo launchctl load ~/Library/LaunchDaemons/com.mysql.mysqld.plist"
 alias g="git"
 
 # z
