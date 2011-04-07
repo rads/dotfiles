@@ -12,11 +12,12 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$(defaults read "${HOME}/.MacOSX/environment" PATH)
-alias e="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nc"
+alias e="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n"
 alias emacs="~/Applications/Emacs.app/Contents/MacOS/Emacs"
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
-export EDITOR="mate -w"
+export EDITOR="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
+export MANPAGER="/usr/local/bin/most -s"
 
 function git(){hub $@}
 alias mongod="mongod run --config /etc/mongod.conf"
@@ -27,3 +28,7 @@ alias g="git"
 function precmd () {
   z --add "$(pwd -P)"
 }
+
+if [ -z "$TMPDIR" ]; then
+export TMPDIR=`getconf DARWIN_USER_TEMP_DIR`
+fi
