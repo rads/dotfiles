@@ -22,6 +22,7 @@ export MANPAGER="/usr/local/bin/most -s"
 function git(){hub $@}
 alias mongod="mongod run --config /etc/mongod.conf"
 alias g="git"
+alias clj="~/lib/clj-rlwrap.sh"
 
 # z
 . ~/lib/z-zsh/z.sh
