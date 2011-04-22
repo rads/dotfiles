@@ -13,6 +13,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=$(defaults read "${HOME}/.MacOSX/environment" PATH)
 alias e="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
+alias enw="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
 alias emacs="~/Applications/Emacs.app/Contents/MacOS/Emacs"
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
@@ -22,7 +23,6 @@ export MANPAGER="/usr/local/bin/most -s"
 function git(){hub $@}
 alias mongod="mongod run --config /etc/mongod.conf"
 alias g="git"
-alias clj="~/lib/clj-rlwrap.sh"
 
 # z
 . ~/lib/z-zsh/z.sh
