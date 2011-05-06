@@ -18,7 +18,7 @@ alias emacs="~/Applications/Emacs.app/Contents/MacOS/Emacs"
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
 export EDITOR="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
-export MANPAGER="/usr/local/bin/most -s"
+export TERM="xterm-256color"
 
 function git(){hub $@}
 alias mongod="mongod run --config /etc/mongod.conf"
