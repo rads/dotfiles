@@ -1,0 +1,3 @@
+[submodule ".vim/vendor/vim-rooter"]
+	path = .vim/vendor/vim-rooter
+	url = https://github.com/airblade/vim-rooter.git
