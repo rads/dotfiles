@@ -15,9 +15,9 @@ export PATH=$(defaults read "${HOME}/.MacOSX/environment" PATH)
 alias e="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
 alias enw="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
 alias emacs="~/Applications/Emacs.app/Contents/MacOS/Emacs"
-if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
+alias v="vim"
 
-export EDITOR="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
+export EDITOR="vim -f"
 export TERM="xterm-256color"
 
 function git(){hub $@}
