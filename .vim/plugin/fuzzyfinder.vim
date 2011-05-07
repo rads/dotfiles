@@ -1,0 +1,1 @@
+../vendor/fuzzyfinder_textmate/fuzzyfinder.vim

@@ -1,7 +1,6 @@
 set nocompatible                  " Must come first because it changes other options.
 
 call pathogen#runtime_append_all_bundles() 
-call pathogen#helptags()
 
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
@@ -21,7 +20,7 @@ set wildmode=list:longest         " Complete files like a shell.
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 
-set number                        " Show line numbers.
+"set number                        " Show line numbers.
 set ruler                         " Show cursor position.
 
 set incsearch                     " Highlight matches as you type.
@@ -41,6 +40,8 @@ set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
+set smarttab
+set autoindent
 
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
@@ -50,8 +51,14 @@ colorscheme zenburn
 set cursorline
 hi cursorline guibg=#313633
 set guicursor=i:block,n:blinkon0
+highlight OverLength ctermbg=red ctermfg=white guifg=#e182ed
+match OverLength /\%81v.\+/
 
 let g:bufExplorerShowRelativePath=1
+
+let mapleader = ","
+set listchars=tab:>-,trail:·,eol:$
+set shortmess=atI
 
 imap jk <Esc>
 
@@ -66,10 +73,11 @@ map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
-map <Leader>t :FuzzyFinderTextMate<Enter>
+map <leader>t :FuzzyFinderTextMate<Enter>
+map <leader>b :FuzzyFinderBuffer<CR>
 
 if has('gui_running')
-  set columns=80
+  set columns=84
   set lines=50
   
   set guifont=Consolas:h15
@@ -79,3 +87,9 @@ if has('gui_running')
   set guioptions-=l               "kill left scrollbar
   set guioptions-=L               "kill left scrollbar with multiple buffers
 endif
+
+" Autocmds
+au FileType make     set noexpandtab
+aug coding
+  
+aug END
