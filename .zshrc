@@ -17,7 +17,7 @@ alias enw="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
 alias emacs="~/Applications/Emacs.app/Contents/MacOS/Emacs"
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
-export EDITOR="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
+export EDITOR="~/bin/vim"
 export TERM="xterm-256color"
 
 function git(){hub $@}
