@@ -15,7 +15,7 @@ export PATH=$(defaults read "${HOME}/.MacOSX/environment" PATH)
 alias e="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
 alias enw="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
 alias emacs="~/Applications/Emacs.app/Contents/MacOS/Emacs"
-alias v="vim"
+alias v="vim -f"
 
 export EDITOR="vim -f"
 export TERM="xterm-256color"
