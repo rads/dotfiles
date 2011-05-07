@@ -1,5 +1,8 @@
 set nocompatible                  " Must come first because it changes other options.
 
+call pathogen#runtime_append_all_bundles() 
+call pathogen#helptags()
+
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
 
@@ -48,6 +51,8 @@ set cursorline
 hi cursorline guibg=#313633
 set guicursor=i:block,n:blinkon0
 
+let g:bufExplorerShowRelativePath=1
+
 imap jk <Esc>
 
 " Tab mappings.
@@ -61,8 +66,7 @@ map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
-" Uncomment to use Jamis Buck's file opening plugin
-"map <Leader>t :FuzzyFinderTextMate<Enter>
+map <Leader>t :FuzzyFinderTextMate<Enter>
 
 if has('gui_running')
   set columns=80
