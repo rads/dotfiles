@@ -1,6 +1,8 @@
-set nocompatible                  " Must come first because it changes other options.
-
+filetype off
+silent! ruby require('rubygems')
 call pathogen#runtime_append_all_bundles() 
+
+set nocompatible                  " Must come first because it changes other options.
 
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
@@ -43,16 +45,16 @@ set expandtab                    " Use spaces instead of tabs
 set smarttab
 set autoindent
 
+" Break lines intelligently when wrapping
+set linebreak
+set display+=lastline
+
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 colorscheme zenburn 
-set cursorline
-hi cursorline guibg=#313633
 set guicursor=i:block,n:blinkon0
-highlight OverLength ctermbg=red ctermfg=white guifg=#e182ed
-match OverLength /\%81v.\+/
 
 let g:bufExplorerShowRelativePath=1
 
@@ -61,6 +63,7 @@ set listchars=tab:>-,trail:·,eol:$
 set shortmess=atI
 
 imap jk <Esc>
+nmap <c-tab> <c-w>w
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
@@ -73,11 +76,8 @@ map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
-map <leader>t :FuzzyFinderTextMate<Enter>
-map <leader>b :FuzzyFinderBuffer<CR>
-
 if has('gui_running')
-  set columns=84
+  set columns=80
   set lines=50
   
   set guifont=Consolas:h15
@@ -90,6 +90,17 @@ endif
 
 " Autocmds
 au FileType make     set noexpandtab
-aug coding
-  
-aug END
+
+function! Coding()
+  syn match OverLength /^.\{80\}.*$/ 
+  hi OverLength ctermbg=red ctermfg=white guifg=#e182ed
+
+  syn match ExtraWhitespace /\s\+$\| \+\ze\t/
+  hi ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+
+  setl cursorline
+  hi cursorline guibg=#313633
+endfunction
+
+au FileType ruby call Coding()
+au BufRead,BufNewFile *.txt set filetype=mkd
