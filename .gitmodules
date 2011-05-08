@@ -18,4 +18,22 @@
 	url = https://github.com/plasticboy/vim-markdown.git
 [submodule ".vim/bundle/command-t"]
 	path = .vim/bundle/command-t
-	url = git://git.wincent.com/command-t.git
+  url = git://git.wincent.com/command-t.git
+[submodule ".emacs.d/vendor/yasnippet-ruby-mode"]
+  path = .emacs.d/vendor/yasnippet-ruby-mode
+  url = git://github.com/bmaland/yasnippet-ruby-mode.git
+[submodule ".emacs.d/vendor/textmate.el"]
+  path = .emacs.d/vendor/textmate.el
+  url = git://github.com/defunkt/textmate.el.git
+[submodule ".emacs.d/vendor/full-ack"]
+  path = .emacs.d/vendor/full-ack
+  url = https://github.com/nschum/full-ack.git
+[submodule ".emacs.d/vendor/zenburn"]
+  path = .emacs.d/vendor/zenburn
+  url = https://github.com/bbatsov/zenburn-emacs.git
+[submodule ".emacs.d/vendor/magit"]
+  path = .emacs.d/vendor/magit
+  url = https://github.com/philjackson/magit.git
+[submodule ".emacs.d/vendor/coffee-mode"]
+  path = .emacs.d/vendor/coffee-mode
+  url = git://github.com/defunkt/coffee-mode.git

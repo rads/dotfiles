@@ -1,0 +1,10 @@
+*.elc
+.DS_Store
+backups/*
+places
+auto-save-list
+url/*
+local.el
+*~
+tramp
+.org-id-locations
