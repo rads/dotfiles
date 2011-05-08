@@ -27,6 +27,7 @@ set ruler                         " Show cursor position.
 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
+set hl=l:IncSearch
 
 set wrap                          " Turn on line wrapping.
 set scrolloff=3                   " Show 3 lines of context around the cursor.
@@ -54,16 +55,20 @@ set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 colorscheme zenburn 
-set guicursor=i:block,n:blinkon0
+set guicursor+=n-v-c:blinkon0
+set guicursor+=i-ci:ver25-blinkwait500-blinkon700-blinkoff400
 
 let g:bufExplorerShowRelativePath=1
 
 let mapleader = ","
-set listchars=tab:>-,trail:·,eol:$
+set listchars=tab:>-,eol:$
 set shortmess=atI
 
 imap jk <Esc>
 nmap <c-tab> <c-w>w
+nmap <silent> j gj
+nmap <silent> k gk
+map <leader>n :%s/\s\+$//e<cr>
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
@@ -96,7 +101,7 @@ function! Coding()
   hi OverLength ctermbg=red ctermfg=white guifg=#e182ed
 
   syn match ExtraWhitespace /\s\+$\| \+\ze\t/
-  hi ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+  hi ExtraWhitespace ctermbg=darkred guibg=darkred
 
   setl cursorline
   hi cursorline guibg=#313633
