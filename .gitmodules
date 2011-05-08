@@ -13,8 +13,11 @@
 [submodule ".vim/bundle/ack.vim"]
 	path = .vim/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
-[submodule ".vim/bundle/vim-markdown"]
-	path = .vim/bundle/vim-markdown
+[submodule ".vim/bundle/plasticboy-vim-markdown"]
+	path = .vim/bundle/plasticboy-vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule ".vim/bundle/hallison-vim-markdown"]
+	path = .vim/vendor/hallison-vim-markdown
 	url = https://github.com/hallison/vim-markdown.git
 [submodule ".vim/bundle/command-t"]
 	path = .vim/bundle/command-t
