@@ -76,8 +76,10 @@ nnoremap <silent> k gk
 nnoremap ' `
 nnoremap ` '
 
-nmap <leader>n :%s/\s\+$//e<cr>``:noh<cr>
-nmap <leader>v :e $MYVIMRC<cr>
+nmap <leader>n :%s/\s\+$//e<cr>``:nohlsearch<cr>
+nmap <leader>ve :e $MYVIMRC<cr>
+nmap <leader>vr :so $MYVIMRC<cr>
+nmap <silent> <leader>/ :nohlsearch<cr>
 
 " Fugitive
 map <leader>gg :Git 
