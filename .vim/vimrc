@@ -68,7 +68,7 @@ let mapleader=","
 set listchars=tab:>-,eol:$
 set shortmess=atI
 
-inoremap jk <Esc>
+"inoremap jk <Esc>
 nnoremap <c-tab> <c-w>w
 nnoremap <silent> j gj
 nnoremap <silent> k gk
