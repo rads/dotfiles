@@ -1,6 +1,7 @@
 filetype off
 silent! ruby require('rubygems')
-call pathogen#runtime_append_all_bundles() 
+silent! call pathogen#runtime_append_all_bundles()
+silent! call pathogen#helptags()
 
 set nocompatible                  " Must come first because it changes other options.
 
@@ -52,23 +53,36 @@ set display+=lastline
 
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
 
-colorscheme zenburn 
+colorscheme zenburn
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i-ci:ver25-blinkwait500-blinkon700-blinkoff400
 
 let g:bufExplorerShowRelativePath=1
+let g:delimitMate_excluded_ft='txt,mkd'
+let g:delimitMate_expand_space=1
+let g:delimitMate_expand_cr=1
 
-let mapleader = ","
+let mapleader=","
 set listchars=tab:>-,eol:$
 set shortmess=atI
 
 inoremap jk <Esc>
-nmap <c-tab> <c-w>w
-nmap <silent> j gj
-nmap <silent> k gk
-map <leader>n :%s/\s\+$//e<cr>
+nnoremap <c-tab> <c-w>w
+nnoremap <silent> j gj
+nnoremap <silent> k gk
+
+nnoremap ' `
+nnoremap ` '
+
+nmap <leader>n :%s/\s\+$//e<cr>``:noh<cr>
+nmap <leader>v :e $MYVIMRC<cr>
+
+" Fugitive
+map <leader>gg :Git 
+map <leader>gs :Gstatus<cr>
+map <leader>gc :Gcommit<cr>
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
@@ -81,10 +95,20 @@ map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
+" disable arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
 if has('gui_running')
   set columns=80
   set lines=50
-  
+
   set guifont=Consolas:h15
   set guioptions-=T               "kill toolbar
   set guioptions-=m               "kill menu
@@ -97,7 +121,7 @@ endif
 au FileType make     set noexpandtab
 
 function! Coding()
-  syn match OverLength /^.\{80\}.*$/ 
+  syn match OverLength /^.\{80\}.*$/
   hi OverLength ctermbg=red ctermfg=white guifg=#e182ed
 
   syn match ExtraWhitespace /\s\+$\| \+\ze\t/
@@ -107,5 +131,5 @@ function! Coding()
   hi cursorline guibg=#313633
 endfunction
 
-au FileType ruby call Coding()
 au BufRead,BufNewFile *.txt set filetype=mkd
+au BufRead,BufNewFile * if index(['txt', 'mkd'],&ft) == -1|call Coding()|endif
