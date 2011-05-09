@@ -8,6 +8,7 @@ export ZSH_THEME="robbyrussell-modified"
 # Comment this out to disable weekly auto-update checks
 # export DISABLE_AUTO_UPDATE="false"
 
+plugins=(vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
