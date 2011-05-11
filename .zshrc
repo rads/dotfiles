@@ -17,6 +17,8 @@ alias e="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
 alias enw="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
 alias emacs="~/Applications/Emacs.app/Contents/MacOS/Emacs"
 alias v="vim -f"
+alias work="sudo cp ~/lib/hosts.work /etc/hosts"
+alias play="sudo cp ~/lib/hosts.play /etc/hosts"
 
 export EDITOR="vim -f"
 export TERM="xterm-256color"
