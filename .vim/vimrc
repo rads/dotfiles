@@ -68,21 +68,30 @@ let mapleader=","
 set listchars=tab:>-,eol:$
 set shortmess=atI
 
-"inoremap jk <Esc>
+" Ctrl-Tab for window navigation
 nnoremap <c-tab> <c-w>w
+
+" Visual up and down rather than line-based
 nnoremap <silent> j gj
 nnoremap <silent> k gk
 
+" Usually ' jumps to the beginning of the line and ` to the exact character,
+" but it makes more sense to swap them.
 nnoremap ' `
 nnoremap ` '
 
-nmap <leader>n :%s/\s\+$//e<cr>``:nohlsearch<cr>
+" Remove trailing whitespace
+nmap <silent> <leader>n my:%s/\s\+$//e<cr>'y:nohlsearch<cr>
+
+" Quickly edit and reload .vimrc
 nmap <leader>ve :e $MYVIMRC<cr>
 nmap <leader>vr :so $MYVIMRC<cr>
+
+" Disable search highlighting
 nmap <silent> <leader>/ :nohlsearch<cr>
 
 " Fugitive
-map <leader>gg :Git 
+map <leader>gg :Git
 map <leader>gs :Gstatus<cr>
 map <leader>gc :Gcommit<cr>
 
