@@ -63,6 +63,7 @@ let g:bufExplorerShowRelativePath=1
 let g:delimitMate_excluded_ft='txt,mkd'
 let g:delimitMate_expand_space=1
 let g:delimitMate_expand_cr=1
+let g:yankring_history_dir='$HOME/.vim/tmp'
 
 let mapleader=","
 set listchars=tab:>-,eol:$
