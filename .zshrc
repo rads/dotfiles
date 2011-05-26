@@ -3,12 +3,12 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
-export ZSH_THEME="robbyrussell-modified"
+export ZSH_THEME="robbyrussell"
 
 # Comment this out to disable weekly auto-update checks
 # export DISABLE_AUTO_UPDATE="false"
 
-plugins=(vi-mode)
+plugins=(vi-mode git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
@@ -24,11 +24,10 @@ export EDITOR="vim -f"
 export TERM="xterm-256color"
 
 function git(){hub $@}
-alias mongod="mongod run --config /etc/mongod.conf"
 alias g="git"
 
 # z
-. ~/lib/z-zsh/z.sh
+. `brew --prefix`/etc/profile.d/z.sh
 function precmd () {
   z --add "$(pwd -P)"
 }
