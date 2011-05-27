@@ -119,7 +119,7 @@ imap <right> <nop>
 
 if has('gui_running')
   set columns=80
-  set lines=50
+  set lines=60
 
   set guifont=Consolas:h16
   set guioptions-=T               "kill toolbar
