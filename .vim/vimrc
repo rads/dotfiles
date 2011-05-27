@@ -121,7 +121,7 @@ if has('gui_running')
   set columns=80
   set lines=50
 
-  set guifont=Consolas:h15
+  set guifont=Consolas:h16
   set guioptions-=T               "kill toolbar
   set guioptions-=m               "kill menu
   set guioptions-=r               "kill right scrollbar
