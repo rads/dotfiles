@@ -1,0 +1,17 @@
+export PATH=$(defaults read "${HOME}/.MacOSX/environment" PATH)
+alias vim="~/Applications/MacVim.app/Contents/MacOS/Vim"
+
+export EDITOR="vim -f"
+
+function git(){hub $@}
+alias g="git"
+
+# z
+. `brew --prefix`/etc/profile.d/z.sh
+function precmd () {
+  z --add "$(pwd -P)"
+}
+
+if [ -z "$TMPDIR" ]; then
+export TMPDIR=`getconf DARWIN_USER_TEMP_DIR`
+fi
