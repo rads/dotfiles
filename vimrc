@@ -135,15 +135,13 @@ endif
 " Autocmds
 au FileType make     set noexpandtab
 
-function! Coding()
-  " syn match OverLength /^.\{80\}.*$/
-  " hi OverLength ctermbg=red ctermfg=white guifg=#e182ed
-
-  syn match ExtraWhitespace /\s\+$\| \+\ze\t/
   hi ExtraWhitespace ctermbg=darkred guibg=darkred
-
+  hi CursorLine guibg=#313633 ctermbg=236 cterm=none
+  hi ColorColumn guibg=#4f4f4f ctermbg=238 cterm=none
+function! Coding()
+  setl colorcolumn=81
+  syn match ExtraWhitespace /\s\+$\| \+\ze\t/
   setl cursorline
-  hi cursorline guibg=#313633
 endfunction
 
 au BufRead,BufNewFile *.txt set filetype=mkd
