@@ -1,0 +1,21 @@
+export PATH=$(defaults read "${HOME}/.MacOSX/environment" PATH)
+alias e="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
+alias enw="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
+alias emacs="~/Applications/Emacs.app/Contents/MacOS/Emacs"
+alias work="sudo cp ~/lib/hosts.work /etc/hosts"
+alias play="sudo cp ~/lib/hosts.play /etc/hosts"
+
+export EDITOR="vim -f"
+
+function git(){hub $@}
+alias g="git"
+
+# z
+. ~/lib/z-zsh/z.sh
+function precmd () {
+  z --add "$(pwd -P)"
+}
+
+if [ -z "$TMPDIR" ]; then
+  export TMPDIR=`getconf DARWIN_USER_TEMP_DIR`
+fi
