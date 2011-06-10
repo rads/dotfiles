@@ -16,6 +16,7 @@ export PATH=$(defaults read "${HOME}/.MacOSX/environment" PATH)
 alias e="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
 alias enw="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
 alias emacs="~/Applications/Emacs.app/Contents/MacOS/Emacs"
+alias vim="~/Applications/MacVim.app/Contents/MacOS/Vim"
 alias v="vim -f"
 alias work="sudo cp ~/lib/hosts.work /etc/hosts"
 alias play="sudo cp ~/lib/hosts.play /etc/hosts"
