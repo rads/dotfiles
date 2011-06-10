@@ -99,16 +99,17 @@ map <leader>gs :Gstatus<cr>
 map <leader>gc :Gcommit<cr>
 
 " Tab mappings.
-map <leader>tt :tabnew<cr>
-" map <leader>te :tabedit          " This conflicts with Command-T
-map <leader>tc :tabclose<cr>
-map <leader>to :tabonly<cr>
-map <leader>tn :tabnext<cr>
-map <leader>tp :tabprevious<cr>
-map <leader>tf :tabfirst<cr>
-map <leader>tl :tablast<cr>
-map <leader>tm :tabmove
-
+" NOTE: These conflict with Command-T.
+" map <leader>tt :tabnew<cr>
+" map <leader>te :tabedit
+" map <leader>tc :tabclose<cr>
+" map <leader>to :tabonly<cr>
+" map <leader>tn :tabnext<cr>
+" map <leader>tp :tabprevious<cr>
+" map <leader>tf :tabfirst<cr>
+" map <leader>tl :tablast<cr>
+" map <leader>tm :tabmove
+" 
 " disable arrow keys
 map <up> <nop>
 map <down> <nop>
