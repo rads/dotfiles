@@ -59,11 +59,11 @@ colorscheme zenburn
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i-ci:ver25-blinkwait500-blinkon700-blinkoff400
 
-let g:bufExplorerShowRelativePath=1
 let g:delimitMate_excluded_ft='txt,mkd'
 let g:delimitMate_expand_space=1
 let g:delimitMate_expand_cr=1
 let g:yankring_history_dir='$HOME/.vim/tmp'
+let g:local_vimrc='.vimrc.local'
 
 let mapleader=","
 set listchars=tab:>-,eol:$
@@ -136,8 +136,8 @@ endif
 au FileType make     set noexpandtab
 
 function! Coding()
-  syn match OverLength /^.\{80\}.*$/
-  hi OverLength ctermbg=red ctermfg=white guifg=#e182ed
+  " syn match OverLength /^.\{80\}.*$/
+  " hi OverLength ctermbg=red ctermfg=white guifg=#e182ed
 
   syn match ExtraWhitespace /\s\+$\| \+\ze\t/
   hi ExtraWhitespace ctermbg=darkred guibg=darkred
@@ -148,3 +148,7 @@ endfunction
 
 au BufRead,BufNewFile *.txt set filetype=mkd
 au BufRead,BufNewFile * if index(['txt', 'mkd'],&ft) == -1|call Coding()|endif
+
+if filereadable(".vimrc.local")
+  source .vimrc.local
+endif

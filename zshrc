@@ -11,4 +11,4 @@ export ZSH_THEME="robbyrussell"
 plugins=(vi-mode git)
 source $ZSH/oh-my-zsh.sh
 
-[[ -f ~/.localrc ]] && . ~/.localrc
+[[ -f ~/.zshrc.local ]] && . ~/.zshrc.local
