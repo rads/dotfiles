@@ -63,6 +63,7 @@ let g:bufExplorerShowRelativePath=1
 let g:delimitMate_excluded_ft='txt,mkd'
 let g:delimitMate_expand_space=1
 let g:delimitMate_expand_cr=1
+let g:yankring_history_dir='$HOME/.vim/tmp'
 
 let mapleader=","
 set listchars=tab:>-,eol:$
@@ -79,6 +80,8 @@ nnoremap <silent> k gk
 " but it makes more sense to swap them.
 nnoremap ' `
 nnoremap ` '
+
+nnoremap Y y$
 
 " Remove trailing whitespace
 nmap <silent> <leader>n my:%s/\s\+$//e<cr>'y:nohlsearch<cr>
@@ -97,7 +100,7 @@ map <leader>gc :Gcommit<cr>
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
-map <leader>te :tabedit
+" map <leader>te :tabedit          " This conflicts with Command-T
 map <leader>tc :tabclose<cr>
 map <leader>to :tabonly<cr>
 map <leader>tn :tabnext<cr>
