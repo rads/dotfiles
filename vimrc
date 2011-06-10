@@ -136,8 +136,8 @@ endif
 au FileType make     set noexpandtab
 
   hi ExtraWhitespace ctermbg=darkred guibg=darkred
-  hi CursorLine guibg=#313633 ctermbg=236 cterm=none
-  hi ColorColumn guibg=#4f4f4f ctermbg=238 cterm=none
+  hi ColorColumn guibg=#313633 ctermbg=236 cterm=none
+  hi CursorLine guibg=#4f4f4f ctermbg=238 cterm=none
 function! Coding()
   setl colorcolumn=81
   syn match ExtraWhitespace /\s\+$\| \+\ze\t/
