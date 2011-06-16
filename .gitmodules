@@ -1,60 +1,63 @@
-[submodule ".vim/bundle/vim-rooter"]
-	path = .vim/bundle/vim-rooter
+[submodule "vim/bundle/vim-rooter"]
+	path = vim/bundle/vim-rooter
 	url = https://github.com/airblade/vim-rooter.git
-[submodule ".vim/vendor/vim-pathogen"]
-	path = .vim/vendor/vim-pathogen
+[submodule "vim/vendor/vim-pathogen"]
+	path = vim/vendor/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule ".vim/bundle/vim-surround"]
-	path = .vim/bundle/vim-surround
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule ".vim/bundle/vim-yankring"]
-	path = .vim/bundle/vim-yankring
+[submodule "vim/bundle/vim-yankring"]
+	path = vim/bundle/vim-yankring
 	url = https://github.com/chrismetcalf/vim-yankring.git
-[submodule ".vim/bundle/ack.vim"]
-	path = .vim/bundle/ack.vim
+[submodule "vim/bundle/ack.vim"]
+	path = vim/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
-[submodule ".vim/bundle/plasticboy-vim-markdown"]
-	path = .vim/bundle/plasticboy-vim-markdown
+[submodule "vim/bundle/plasticboy-vim-markdown"]
+	path = vim/bundle/plasticboy-vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
-[submodule ".vim/bundle/hallison-vim-markdown"]
-	path = .vim/vendor/hallison-vim-markdown
+[submodule "vim/bundle/hallison-vim-markdown"]
+	path = vim/vendor/hallison-vim-markdown
 	url = https://github.com/hallison/vim-markdown.git
-[submodule ".vim/bundle/command-t"]
-	path = .vim/bundle/command-t
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
   url = git://git.wincent.com/command-t.git
-[submodule ".emacs.d/vendor/yasnippet-ruby-mode"]
-  path = .emacs.d/vendor/yasnippet-ruby-mode
+[submodule "emacs.d/vendor/yasnippet-ruby-mode"]
+  path = emacs.d/vendor/yasnippet-ruby-mode
   url = git://github.com/bmaland/yasnippet-ruby-mode.git
-[submodule ".emacs.d/vendor/textmate.el"]
-  path = .emacs.d/vendor/textmate.el
+[submodule "emacs.d/vendor/textmate.el"]
+  path = emacs.d/vendor/textmate.el
   url = git://github.com/defunkt/textmate.el.git
-[submodule ".emacs.d/vendor/full-ack"]
-  path = .emacs.d/vendor/full-ack
+[submodule "emacs.d/vendor/full-ack"]
+  path = emacs.d/vendor/full-ack
   url = https://github.com/nschum/full-ack.git
-[submodule ".emacs.d/vendor/zenburn"]
-  path = .emacs.d/vendor/zenburn
+[submodule "emacs.d/vendor/zenburn"]
+  path = emacs.d/vendor/zenburn
   url = https://github.com/bbatsov/zenburn-emacs.git
-[submodule ".emacs.d/vendor/magit"]
-  path = .emacs.d/vendor/magit
+[submodule "emacs.d/vendor/magit"]
+  path = emacs.d/vendor/magit
   url = https://github.com/philjackson/magit.git
-[submodule ".emacs.d/vendor/coffee-mode"]
-  path = .emacs.d/vendor/coffee-mode
+[submodule "emacs.d/vendor/coffee-mode"]
+  path = emacs.d/vendor/coffee-mode
   url = git://github.com/defunkt/coffee-mode.git
-[submodule ".vim/bundle/vim-fugutive"]
-	path = .vim/bundle/vim-fugutive
+[submodule "vim/bundle/vim-fugutive"]
+	path = vim/bundle/vim-fugutive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/vim-unimpaired"]
-	path = .vim/bundle/vim-unimpaired
+[submodule "vim/bundle/vim-unimpaired"]
+	path = vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
-[submodule ".vim/bundle/vim-endwise"]
-	path = .vim/bundle/vim-endwise
+[submodule "vim/bundle/vim-endwise"]
+	path = vim/bundle/vim-endwise
 	url = https://github.com/camthompson/vim-endwise.git
-[submodule ".vim/bundle/delimitMate"]
-  path = .vim/bundle/delimitMate
+[submodule "vim/bundle/delimitMate"]
+  path = vim/bundle/delimitMate
   url = https://github.com/Raimondi/delimitMate.git
-[submodule ".vim/bundle/tcomment_vim"]
-	path = .vim/bundle/tcomment_vim
+[submodule "vim/bundle/tcomment_vim"]
+	path = vim/bundle/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim.git
-[submodule ".vim/bundle/snipmate.vim"]
-	path = .vim/bundle/snipmate.vim
+[submodule "vim/bundle/snipmate.vim"]
+	path = vim/bundle/snipmate.vim
 	url = https://github.com/msanders/snipmate.vim.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
