@@ -47,6 +47,8 @@ set expandtab                    " Use spaces instead of tabs
 set smarttab
 set autoindent
 
+set mouse=a                      " Support for mouse in terminal
+
 " Break lines intelligently when wrapping
 set linebreak
 set display+=lastline
@@ -98,6 +100,8 @@ map <leader>gg :Git
 map <leader>gs :Gstatus<cr>
 map <leader>gc :Gcommit<cr>
 
+map <silent> <leader>f :NERDTreeToggle<cr>
+
 " Tab mappings.
 " NOTE: These conflict with Command-T.
 " map <leader>tt :tabnew<cr>
@@ -135,9 +139,9 @@ endif
 " Autocmds
 au FileType make     set noexpandtab
 
-  hi ExtraWhitespace ctermbg=darkred guibg=darkred
-  hi ColorColumn guibg=#313633 ctermbg=236 cterm=none
-  hi CursorLine guibg=#4f4f4f ctermbg=238 cterm=none
+hi ExtraWhitespace ctermbg=darkred guibg=darkred
+hi ColorColumn guibg=#313633 ctermbg=236 cterm=none
+hi CursorLine guibg=#4f4f4f ctermbg=238 cterm=none
 function! Coding()
   setl colorcolumn=81
   syn match ExtraWhitespace /\s\+$\| \+\ze\t/
@@ -146,6 +150,7 @@ endfunction
 
 au BufRead,BufNewFile *.txt set filetype=mkd
 au BufRead,BufNewFile * if index(['txt', 'mkd'],&ft) == -1|call Coding()|endif
+au FileType mkd silent! normal zA
 
 if filereadable(".vimrc.local")
   source .vimrc.local
