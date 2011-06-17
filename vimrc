@@ -19,6 +19,7 @@ set hidden                        " Handle multiple buffers better.
 
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
+set wildignore+=*.o,*.obj,.git,*.pyc,*.class,build/**
 
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
@@ -97,6 +98,8 @@ nmap <silent> <leader>/ :nohlsearch<cr>
 map <leader>gg :Git
 map <leader>gs :Gstatus<cr>
 map <leader>gc :Gcommit<cr>
+
+map <silent> <leader>f :NERDTreeToggle<cr>
 
 " Tab mappings.
 " NOTE: These conflict with Command-T.
