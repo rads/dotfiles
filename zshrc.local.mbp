@@ -4,6 +4,7 @@ alias enw="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
 alias emacs="~/Applications/Emacs.app/Contents/MacOS/Emacs"
 alias work="sudo cp ~/lib/hosts.work /etc/hosts"
 alias play="sudo cp ~/lib/hosts.play /etc/hosts"
+alias cheat="nocorrect cheat"
 
 export EDITOR="vim -f"
 
