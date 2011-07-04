@@ -70,8 +70,10 @@ let g:delimitMate_expand_space=1
 let g:delimitMate_expand_cr=1
 let g:yankring_history_dir='$HOME/.vim/tmp'
 let g:local_vimrc='.vimrc.local'
+let g:vimclojure#ParenRainbow=1
 
 let mapleader=","
+let maplocalleader="\\"
 set listchars=tab:>-,eol:$
 set shortmess=atI
 
