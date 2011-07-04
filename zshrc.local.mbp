@@ -6,6 +6,8 @@ alias work="sudo cp ~/lib/hosts.work /etc/hosts"
 alias play="sudo cp ~/lib/hosts.play /etc/hosts"
 alias cheat="nocorrect cheat"
 
+ta() { tmux attach -t $1 }
+
 export EDITOR="vim -f"
 
 function git(){hub $@}
