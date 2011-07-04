@@ -23,8 +23,10 @@ set wildmode=list:longest         " Complete files like a shell.
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 
-"set number                        " Show line numbers.
+set number                        " Show line numbers.
 set ruler                         " Show cursor position.
+set relativenumber
+set undofile
 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
@@ -57,7 +59,9 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
 
-colorscheme zenburn
+set background=light
+colorscheme solarized
+
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i-ci:ver25-blinkwait500-blinkon700-blinkoff400
 
@@ -113,7 +117,7 @@ map <silent> <leader>f :NERDTreeToggle<cr>
 " map <leader>tf :tabfirst<cr>
 " map <leader>tl :tablast<cr>
 " map <leader>tm :tabmove
-" 
+
 " disable arrow keys
 map <up> <nop>
 map <down> <nop>
@@ -139,9 +143,7 @@ endif
 " Autocmds
 au FileType make     set noexpandtab
 
-hi ExtraWhitespace ctermbg=darkred guibg=darkred
-hi ColorColumn guibg=#313633 ctermbg=236 cterm=none
-hi CursorLine guibg=#4f4f4f ctermbg=238 cterm=none
+hi ExtraWhitespace ctermbg=7 guibg=#eee8d5
 function! Coding()
   setl colorcolumn=81
   syn match ExtraWhitespace /\s\+$\| \+\ze\t/
