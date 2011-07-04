@@ -151,6 +151,7 @@ endfunction
 au BufRead,BufNewFile *.txt set filetype=mkd
 au BufRead,BufNewFile * if index(['txt', 'mkd'],&ft) == -1|call Coding()|endif
 au FileType mkd silent! normal zA
+au FileType java setl tabstop=4|setl shiftwidth=4
 
 if filereadable(".vimrc.local")
   source .vimrc.local
