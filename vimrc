@@ -24,8 +24,15 @@ set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 
 set ruler                         " Show cursor position.
-set relativenumber                " Show relative line numbers
-set undofile
+
+if exists('+undofile')            " Save undo state for each file
+  set undofile
+  set undodir=$HOME/.vim/tmp//,.
+endif
+
+if exists('+relativenumber')      " Show relative line numbers
+  set relativenumber
+endif
 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
