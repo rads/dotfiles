@@ -23,9 +23,8 @@ set wildmode=list:longest         " Complete files like a shell.
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 
-set number                        " Show line numbers.
 set ruler                         " Show cursor position.
-set relativenumber
+set relativenumber                " Show relative line numbers
 set undofile
 
 set incsearch                     " Highlight matches as you type.
@@ -89,6 +88,7 @@ nnoremap <silent> k gk
 nnoremap ' `
 nnoremap ` '
 
+" Make Y yank to the end of the line, not the whole line
 nnoremap Y y$
 
 " Remove trailing whitespace
@@ -131,7 +131,7 @@ imap <left> <nop>
 imap <right> <nop>
 
 if has('gui_running')
-  set columns=80
+  set columns=84
   set lines=50
 
   set guifont=Consolas:h15
