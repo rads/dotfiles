@@ -11,4 +11,7 @@ export ZSH_THEME="robbyrussell-modified"
 plugins=(vi-mode git)
 source $ZSH/oh-my-zsh.sh
 
+bindkey '^S' history-incremental-search-forward
+bindkey '^R' history-incremental-search-backward
+
 [[ -f ~/.zshrc.local ]] && . ~/.zshrc.local
