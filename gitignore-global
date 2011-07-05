@@ -56,3 +56,12 @@ tmtags
 *.tar.gz
 *.zip
 *.bzip
+
+## Eclipse
+.classpath
+.project
+eclipse-bin
+
+## Brazil
+build
+coral-generated-src
