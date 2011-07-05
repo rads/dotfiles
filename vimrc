@@ -142,7 +142,9 @@ au FileType make     set noexpandtab
   hi ColorColumn guibg=#313633 ctermbg=236 cterm=none
   hi CursorLine guibg=#4f4f4f ctermbg=238 cterm=none
 function! Coding()
-  setl colorcolumn=81
+  if exists('+colorcolumn')
+    setl colorcolumn=81
+  endif
   syn match ExtraWhitespace /\s\+$\| \+\ze\t/
   setl cursorline
 endfunction
