@@ -19,6 +19,7 @@ set hidden                        " Handle multiple buffers better.
 
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
+set wildignore+=*.o,*.obj,.git,*.pyc,*.class,build/**
 
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
@@ -89,6 +90,8 @@ nnoremap <c-tab> <c-w>w
 " Visual up and down rather than line-based
 nnoremap <silent> j gj
 nnoremap <silent> k gk
+vnoremap <silent> j gj
+vnoremap <silent> k gk
 
 " Usually ' jumps to the beginning of the line and ` to the exact character,
 " but it makes more sense to swap them.
@@ -154,7 +157,9 @@ au FileType make     set noexpandtab
 
 hi ExtraWhitespace ctermbg=7 guibg=#eee8d5
 function! Coding()
-  setl colorcolumn=81
+  if exists('+colorcolumn')
+    setl colorcolumn=81
+  endif
   syn match ExtraWhitespace /\s\+$\| \+\ze\t/
   setl cursorline
 endfunction

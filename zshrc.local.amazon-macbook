@@ -5,6 +5,8 @@ export EDITOR="vim -f"
 
 function git(){hub $@}
 alias g="git"
+alias ss="~/lib/start_synergy.sh"
+alias sshf="ssh -c arcfour,blowfish-cbc -XC"
 
 # z
 . `brew --prefix`/etc/profile.d/z.sh
