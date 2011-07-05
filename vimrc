@@ -76,6 +76,8 @@ nnoremap <c-tab> <c-w>w
 " Visual up and down rather than line-based
 nnoremap <silent> j gj
 nnoremap <silent> k gk
+vnoremap <silent> j gj
+vnoremap <silent> k gk
 
 " Usually ' jumps to the beginning of the line and ` to the exact character,
 " but it makes more sense to swap them.
