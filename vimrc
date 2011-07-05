@@ -84,6 +84,11 @@ let maplocalleader="\\"
 set listchars=tab:>-,eol:$
 set shortmess=atI
 
+" Toggle paste mode
+nnoremap <leader>i :set invpaste paste?<cr>
+set pastetoggle=<leader>i
+set showmode
+
 " Ctrl-Tab for window navigation
 nnoremap <c-tab> <c-w>w
 
