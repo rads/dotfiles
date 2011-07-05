@@ -23,8 +23,16 @@ set wildmode=list:longest         " Complete files like a shell.
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 
-"set number                        " Show line numbers.
 set ruler                         " Show cursor position.
+
+if exists('+undofile')            " Save undo state for each file
+  set undofile
+  set undodir=$HOME/.vim/tmp//,.
+endif
+
+if exists('+relativenumber')      " Show relative line numbers
+  set relativenumber
+endif
 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
@@ -47,6 +55,8 @@ set expandtab                    " Use spaces instead of tabs
 set smarttab
 set autoindent
 
+set mouse=a                      " Support for mouse in terminal
+
 " Break lines intelligently when wrapping
 set linebreak
 set display+=lastline
@@ -55,7 +65,9 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
 
-colorscheme zenburn
+set background=light
+colorscheme solarized
+
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i-ci:ver25-blinkwait500-blinkon700-blinkoff400
 
@@ -64,8 +76,10 @@ let g:delimitMate_expand_space=1
 let g:delimitMate_expand_cr=1
 let g:yankring_history_dir='$HOME/.vim/tmp'
 let g:local_vimrc='.vimrc.local'
+let g:vimclojure#ParenRainbow=1
 
 let mapleader=","
+let maplocalleader="\\"
 set listchars=tab:>-,eol:$
 set shortmess=atI
 
@@ -81,6 +95,7 @@ nnoremap <silent> k gk
 nnoremap ' `
 nnoremap ` '
 
+" Make Y yank to the end of the line, not the whole line
 nnoremap Y y$
 
 " Remove trailing whitespace
@@ -98,6 +113,8 @@ map <leader>gg :Git
 map <leader>gs :Gstatus<cr>
 map <leader>gc :Gcommit<cr>
 
+map <silent> <leader>f :NERDTreeToggle<cr>
+
 " Tab mappings.
 " NOTE: These conflict with Command-T.
 " map <leader>tt :tabnew<cr>
@@ -109,7 +126,7 @@ map <leader>gc :Gcommit<cr>
 " map <leader>tf :tabfirst<cr>
 " map <leader>tl :tablast<cr>
 " map <leader>tm :tabmove
-" 
+
 " disable arrow keys
 map <up> <nop>
 map <down> <nop>
@@ -121,7 +138,7 @@ imap <left> <nop>
 imap <right> <nop>
 
 if has('gui_running')
-  set columns=80
+  set columns=84
   set lines=50
 
   set guifont=Consolas:h15
@@ -135,9 +152,7 @@ endif
 " Autocmds
 au FileType make     set noexpandtab
 
-  hi ExtraWhitespace ctermbg=darkred guibg=darkred
-  hi ColorColumn guibg=#313633 ctermbg=236 cterm=none
-  hi CursorLine guibg=#4f4f4f ctermbg=238 cterm=none
+hi ExtraWhitespace ctermbg=7 guibg=#eee8d5
 function! Coding()
   setl colorcolumn=81
   syn match ExtraWhitespace /\s\+$\| \+\ze\t/
@@ -146,6 +161,8 @@ endfunction
 
 au BufRead,BufNewFile *.txt set filetype=mkd
 au BufRead,BufNewFile * if index(['txt', 'mkd'],&ft) == -1|call Coding()|endif
+au FileType mkd silent! normal zA
+au FileType java setl tabstop=4|setl shiftwidth=4
 
 if filereadable(".vimrc.local")
   source .vimrc.local
