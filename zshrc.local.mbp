@@ -16,7 +16,7 @@ function git(){hub $@}
 alias g="git"
 
 # z
-. ~/lib/z-zsh/z.sh
+. ~/lib/z/z.sh
 function precmd () {
   z --add "$(pwd -P)"
 }
