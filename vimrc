@@ -135,6 +135,18 @@ map <silent> <leader>f :NERDTreeToggle<cr>
 " map <leader>tl :tablast<cr>
 " map <leader>tm :tabmove
 
+" Remove bufkill.vim mappings
+silent! unmap <leader>bb
+silent! unmap <leader>bf
+silent! unmap <leader>bun
+silent! unmap <leader>!bun
+silent! unmap <leader>bd
+silent! unmap <leader>!bd
+silent! unmap <leader>bw
+silent! unmap <leader>!bw
+silent! unmap <leader>bundo
+silent! unmap <leader>ba
+
 " disable arrow keys
 map <up> <nop>
 map <down> <nop>
