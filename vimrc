@@ -1,5 +1,4 @@
 filetype off
-silent! ruby require('rubygems')
 silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#helptags()
 
@@ -85,9 +84,9 @@ set listchars=tab:>-,eol:$
 set shortmess=atI
 
 " Toggle paste mode
-nnoremap <leader>i :set invpaste paste?<cr>
-set pastetoggle=<leader>i
-set showmode
+" nnoremap <leader>i :set invpaste paste?<cr>
+" set pastetoggle=<leader>i
+" set showmode
 
 " Ctrl-Tab for window navigation
 nnoremap <c-tab> <c-w>w
