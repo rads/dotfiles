@@ -1,16 +1,31 @@
-export PATH=$(defaults read "${HOME}/.MacOSX/environment" PATH)
+# export PATH=$(defaults read "${HOME}/.MacOSX/environment" PATH)
+export PATH=/Users/rads/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/Users/rads/lib/clojurescript/bin
+eval "$(rbenv init -)"
+
 alias e="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
 alias enw="~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
 alias emacs="~/Applications/Emacs.app/Contents/MacOS/Emacs"
 alias work="sudo cp ~/lib/hosts.work /etc/hosts"
 alias play="sudo cp ~/lib/hosts.play /etc/hosts"
 alias cheat="nocorrect cheat"
+alias vim="/usr/local/Cellar/macvim/7.3-57/MacVim.app/Contents/MacOS/Vim"
+alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
-ta() { tmux attach -t $1 }
-tn() { tmux new -s $1 }
+function v() {
+  if [[ ARGC -eq 1 ]] then
+    mvim --remote $1
+  else
+    mvim --servername $2 --remote $1
+  fi
+}
+
+function ta() { tmux attach -t $1 }
+function tn() { tmux new -s $1 }
 alias tls="tmux ls"
 
 export EDITOR="vim -f"
+export CLOJURESCRIPT_HOME=/Users/rads/lib/clojurescript
 
 function git(){hub $@}
 alias g="git"
@@ -24,3 +39,4 @@ function precmd () {
 if [ -z "$TMPDIR" ]; then
   export TMPDIR=`getconf DARWIN_USER_TEMP_DIR`
 fi
+

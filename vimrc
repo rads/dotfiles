@@ -1,6 +1,5 @@
 filetype off
-silent! call pathogen#runtime_append_all_bundles()
-silent! call pathogen#helptags()
+call pathogen#infect()
 
 set nocompatible                  " Must come first because it changes other options.
 
@@ -77,6 +76,7 @@ let g:delimitMate_expand_cr=1
 let g:yankring_history_dir='$HOME/.vim/tmp'
 let g:local_vimrc='.vimrc.local'
 let g:vimclojure#ParenRainbow=1
+" let g:vimclojure#WantNailgun=1 
 
 let mapleader=","
 let maplocalleader="\\"
@@ -134,17 +134,8 @@ map <silent> <leader>f :NERDTreeToggle<cr>
 " map <leader>tl :tablast<cr>
 " map <leader>tm :tabmove
 
-" Remove bufkill.vim mappings
-silent! unmap <leader>bb
-silent! unmap <leader>bf
-silent! unmap <leader>bun
-silent! unmap <leader>!bun
-silent! unmap <leader>bd
-silent! unmap <leader>!bd
-silent! unmap <leader>bw
-silent! unmap <leader>!bw
-silent! unmap <leader>bundo
-silent! unmap <leader>ba
+nmap SSA :wa<CR>:mksession! ~/sessions/
+nmap SO :wa<CR>:so ~/sessions/
 
 " disable arrow keys
 map <up> <nop>
@@ -156,11 +147,14 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
+nmap SSA :wa<CR>:mksession! ~/sessions/
+nmap SO :wa<CR>:so ~/sessions/
+
 if has('gui_running')
   set columns=84
   set lines=50
 
-  set guifont=Consolas:h15
+  set guifont=Consolas:h18
   set guioptions-=T               "kill toolbar
   set guioptions-=m               "kill menu
   set guioptions-=r               "kill right scrollbar
@@ -178,12 +172,17 @@ function! Coding()
   endif
   syn match ExtraWhitespace /\s\+$\| \+\ze\t/
   setl cursorline
+  " setl nowrap
 endfunction
 
-au BufRead,BufNewFile *.txt set filetype=mkd
-au BufRead,BufNewFile * if index(['txt', 'mkd'],&ft) == -1|call Coding()|endif
-au FileType mkd silent! normal zA
+au BufRead,BufNewFile *.txt set filetype=markdown
+au BufRead,BufNewFile *.as set filetype=actionscript
+au BufRead,BufNewFile *.cljs set filetype=clojure
+au BufRead,BufNewFile * if index(['txt', 'markdown'],&ft) == -1|call Coding()|endif
+au FileType markdown silent! normal zA
+au FileType markdown syn region markdownLinkText matchgroup=markdownLinkTextDelimiter start="\[\[" end="\]\]" keepend
 au FileType java setl tabstop=4|setl shiftwidth=4
+au FileType clojure nmap <buffer> o A<cr>|nmap <buffer> O I<cr><esc>ki
 
 if filereadable(".vimrc.local")
   source .vimrc.local
