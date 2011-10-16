@@ -89,9 +89,9 @@ set shortmess=atI
 cd ~/t
 
 " Toggle paste mode
-" nnoremap <leader>i :set invpaste paste?<cr>
-" set pastetoggle=<leader>i
-" set showmode
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 
 " Ctrl-Tab for window navigation
 nnoremap <c-tab> <c-w>w
@@ -186,8 +186,9 @@ au BufRead,BufNewFile *.txt set filetype=markdown
 au BufRead,BufNewFile *.as set filetype=actionscript
 au BufRead,BufNewFile *.cljs set filetype=clojure
 au BufRead,BufNewFile * if index(['txt', 'markdown'],&ft) == -1|call Coding()|endif
-au FileType markdown silent! normal zA
+
 au FileType markdown syn region markdownLinkText matchgroup=markdownLinkTextDelimiter start="\[\[" end="\]\]" keepend
+
 au FileType java setl tabstop=4|setl shiftwidth=4
 au FileType clojure nmap <buffer> o A<cr>|nmap <buffer> O I<cr><esc>ki
 
