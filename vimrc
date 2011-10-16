@@ -70,13 +70,16 @@ colorscheme solarized
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i-ci:ver25-blinkwait500-blinkon700-blinkoff400
 
-let g:delimitMate_excluded_ft='txt,mkd'
+" let g:delimitMate_excluded_ft='txt,markdown'
 let g:delimitMate_expand_space=1
 let g:delimitMate_expand_cr=1
 let g:yankring_history_dir='$HOME/.vim/tmp'
 let g:local_vimrc='.vimrc.local'
 let g:vimclojure#ParenRainbow=1
 " let g:vimclojure#WantNailgun=1 
+let g:ctrlp_map='<leader>p'
+let g:ctrlp_working_path_mode=2
+let g:ctrlp_dotfiles=0
 
 let mapleader=","
 let maplocalleader="\\"
@@ -125,6 +128,9 @@ map <leader>gc :Gcommit<cr>
 map <silent> <leader>f :NERDTreeToggle<cr>
 map <leader>h :e ~/t/Home.md<cr>
 map <leader>k :Kwbd<cr>
+map <leader>m :CtrlPMRUFiles<cr>
+map <leader>b :CtrlPBuffer<cr>
+map <leader>x :CtrlP ~/t<cr>
 
 " Tab mappings.
 " NOTE: These conflict with Command-T.
@@ -151,11 +157,8 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-nmap SSA :wa<CR>:mksession! ~/sessions/
-nmap SO :wa<CR>:so ~/sessions/
-
 if has('gui_running')
-  set columns=84
+  set columns=72
   set lines=50
 
   set guifont=Consolas:h18
