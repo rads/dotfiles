@@ -83,6 +83,8 @@ let maplocalleader="\\"
 set listchars=tab:>-,eol:$
 set shortmess=atI
 
+cd ~/t
+
 " Toggle paste mode
 " nnoremap <leader>i :set invpaste paste?<cr>
 " set pastetoggle=<leader>i
@@ -121,6 +123,8 @@ map <leader>gs :Gstatus<cr>
 map <leader>gc :Gcommit<cr>
 
 map <silent> <leader>f :NERDTreeToggle<cr>
+map <leader>h :e ~/t/Home.md<cr>
+map <leader>k :Kwbd<cr>
 
 " Tab mappings.
 " NOTE: These conflict with Command-T.
