@@ -12,11 +12,12 @@ alias vim="/usr/local/Cellar/macvim/7.3-57/MacVim.app/Contents/MacOS/Vim"
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
+export VIM_REMOTE="VIM"
 function v() {
   if [[ ARGC -eq 1 ]] then
-    mvim --remote $1
+    mvim --servername $VIM_REMOTE --remote $1
   else
-    mvim --servername $2 --remote $1
+    mvim --servername $1 --remote $2
   fi
 }
 

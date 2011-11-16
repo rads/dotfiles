@@ -29,9 +29,7 @@ if exists('+undofile')            " Save undo state for each file
   set undodir=$HOME/.vim/tmp//,.
 endif
 
-if exists('+relativenumber')      " Show relative line numbers
-  set relativenumber
-endif
+set number
 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
@@ -76,10 +74,12 @@ let g:delimitMate_expand_cr=1
 let g:yankring_history_dir='$HOME/.vim/tmp'
 let g:local_vimrc='.vimrc.local'
 let g:vimclojure#ParenRainbow=1
-" let g:vimclojure#WantNailgun=1 
+let g:vimclojure#WantNailgun=1 
 let g:ctrlp_map='<leader>p'
 let g:ctrlp_working_path_mode=2
 let g:ctrlp_dotfiles=0
+let g:EasyMotion_mapping_b='_b'
+let g:MarkdownPreviewTMP=$HOME.'/.vim/tmp/'
 
 let mapleader=","
 let maplocalleader="\\"
@@ -125,24 +125,15 @@ map <leader>gg :Git
 map <leader>gs :Gstatus<cr>
 map <leader>gc :Gcommit<cr>
 
-map <silent> <leader>f :NERDTreeToggle<cr>
+map <silent> <leader>o :NERDTreeToggle<cr>
 map <leader>h :e ~/t/Home.md<cr>
-map <leader>k :Kwbd<cr>
+map <leader>q :Kwbd<cr>
 map <leader>m :CtrlPMRUFiles<cr>
 map <leader>b :CtrlPBuffer<cr>
 map <leader>x :CtrlP ~/t<cr>
 
-" Tab mappings.
-" NOTE: These conflict with Command-T.
-" map <leader>tt :tabnew<cr>
-" map <leader>te :tabedit
-" map <leader>tc :tabclose<cr>
-" map <leader>to :tabonly<cr>
-" map <leader>tn :tabnext<cr>
-" map <leader>tp :tabprevious<cr>
-" map <leader>tf :tabfirst<cr>
-" map <leader>tl :tablast<cr>
-" map <leader>tm :tabmove
+nmap <c-j> o<Esc>
+nmap <c-k> O<Esc>
 
 nmap SSA :wa<CR>:mksession! ~/sessions/
 nmap SO :wa<CR>:so ~/sessions/
@@ -158,7 +149,7 @@ imap <left> <nop>
 imap <right> <nop>
 
 if has('gui_running')
-  set columns=72
+  set columns=71
   set lines=50
 
   set guifont=Consolas:h18
@@ -181,6 +172,13 @@ function! Coding()
   setl cursorline
   " setl nowrap
 endfunction
+
+function Marked()
+  let file = fnameescape(expand('%'))
+  silent! exec "!open -a Marked " . file
+endfunction
+
+map <silent> <leader>r :call Marked()<cr>
 
 au BufRead,BufNewFile *.txt set filetype=markdown
 au BufRead,BufNewFile *.as set filetype=actionscript

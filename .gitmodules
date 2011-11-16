@@ -42,7 +42,7 @@
 	url = https://github.com/tpope/vim-unimpaired.git
 [submodule "vim/bundle/vim-endwise"]
 	path = vim/bundle/vim-endwise
-	url = https://github.com/camthompson/vim-endwise.git
+	url = https://github.com/tpope/vim-endwise.git
 [submodule "vim/bundle/delimitMate"]
   path = vim/bundle/delimitMate
   url = https://github.com/Raimondi/delimitMate.git
@@ -73,3 +73,12 @@
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/vim-easymotion"]
+	path = vim/bundle/vim-easymotion
+	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "vim/bundle/markdown-preview.vim"]
+	path = vim/bundle/markdown-preview.vim
+	url = https://github.com/mkitt/markdown-preview.vim.git
+[submodule "vim/bundle/vim-markdown-preview"]
+	path = vim/bundle/vim-markdown-preview
+	url = https://github.com/nelstrom/vim-markdown-preview.git
