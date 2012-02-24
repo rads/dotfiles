@@ -1,0 +1,50 @@
+eval "$(rbenv init -)"
+export PATH="/Users/rads/bin:/usr/local/bin:/usr/local/share/python:/usr/local/lib/node_modules:$PATH"
+
+alias cheat="nocorrect cheat"
+alias lein="nocorrect lein"
+alias vim="/usr/local/Cellar/macvim/7.3-63/MacVim.app/Contents/MacOS/Vim"
+alias pg-start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pg-stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+alias cake="~/.rbenv/shims/cake"
+alias dns="networksetup -setdnsservers \"Wi-Fi\""
+alias redis-start="redis-server /usr/local/etc/redis.conf"
+
+export VIM_REMOTE="VIM"
+function v() {
+  if [[ ARGC -eq 1 ]] then
+    mvim --servername $VIM_REMOTE --remote $1
+  else
+    mvim --servername $1 --remote $2
+  fi
+}
+
+function ta() { tmux attach -t $1 }
+function tn() { tmux new -s $1 }
+alias tls="tmux ls"
+alias tc="tmux show-buffer | pbcopy"
+
+export EDITOR="vim -f"
+export CLOJURESCRIPT_HOME=/Users/rads/lib/clojurescript
+
+function git(){hub $@}
+alias g="git"
+alias gci="git commit"
+alias grb="git rebase"
+alias grbi="git rebase -i"
+alias gca="git commit --amend"
+alias gcm="git commit -m"
+alias gs="git status"
+
+# z
+. `brew --prefix`/etc/profile.d/z.sh
+function precmd () {
+	z --add "$(pwd -P)"
+}
+
+if [ -z "$TMPDIR" ]; then
+  export TMPDIR=`getconf DARWIN_USER_TEMP_DIR`
+fi
+
+[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc ]]
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator ]]
