@@ -74,7 +74,7 @@ let g:delimitMate_expand_cr=1
 let g:yankring_history_dir='$HOME/.vim/tmp'
 let g:local_vimrc='.vimrc.local'
 let g:vimclojure#ParenRainbow=1
-let g:vimclojure#WantNailgun=1 
+let g:vimclojure#WantNailgun=0
 let g:ctrlp_map='<leader>p'
 let g:ctrlp_working_path_mode=2
 let g:ctrlp_dotfiles=0
@@ -111,7 +111,15 @@ nnoremap ` '
 nnoremap Y y$
 
 " Remove trailing whitespace
-nmap <silent> <leader>n my:%s/\s\+$//e<cr>'y:nohlsearch<cr>
+function! StripTrailingWhite()
+    let l:winview = winsaveview()
+    silent! %s/\s\+$//e
+    silent! %s/\($\n\s*\)\+\%$//e
+    nohlsearch
+    call winrestview(l:winview)
+endfunction
+
+nmap <silent> <leader>n :call StripTrailingWhite()<cr>
 
 " Quickly edit and reload .vimrc
 nmap <leader>ve :e $MYVIMRC<cr>
@@ -131,6 +139,7 @@ map <leader>q :Kwbd<cr>
 map <leader>m :CtrlPMRUFiles<cr>
 map <leader>b :CtrlPBuffer<cr>
 map <leader>x :CtrlP ~/t<cr>
+map <leader>w :w<cr>
 
 nmap <c-j> o<Esc>
 nmap <c-k> O<Esc>
@@ -188,6 +197,8 @@ au BufRead,BufNewFile * if index(['txt', 'markdown'],&ft) == -1|call Coding()|en
 au FileType markdown syn region markdownLinkText matchgroup=markdownLinkTextDelimiter start="\[\[" end="\]\]" keepend
 
 au FileType java setl tabstop=4|setl shiftwidth=4
+au FileType c setl tabstop=4|setl shiftwidth=4
+au FileType markdown setl tabstop=4|setl shiftwidth=4
 au FileType clojure nmap <buffer> o A<cr>|nmap <buffer> O I<cr><esc>ki
 
 if filereadable(".vimrc.local")

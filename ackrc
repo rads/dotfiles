@@ -1,3 +1,4 @@
 --smart-case
 --follow
 --type-set=markdown=.md,.markdown,.mkd
+--type-set=coffee=.coffee

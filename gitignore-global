@@ -27,6 +27,7 @@ Icon?
 *.swp
 *.swo
 .vimprojects
+.vimrc.local
 
 # KDE
 .directory

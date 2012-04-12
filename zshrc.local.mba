@@ -7,8 +7,9 @@ alias vim="/usr/local/Cellar/macvim/7.3-63/MacVim.app/Contents/MacOS/Vim"
 alias pg-start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg-stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 alias cake="~/.rbenv/shims/cake"
-alias dns="networksetup -setdnsservers \"Wi-Fi\""
+alias dns="ruby ~/Dropbox/Library/Scripts/Toggle\\ DNS.rb"
 alias redis-start="redis-server /usr/local/etc/redis.conf"
+alias wisc-king="ssh radford@best-king.cs.wisc.edu"
 
 export VIM_REMOTE="VIM"
 function v() {
