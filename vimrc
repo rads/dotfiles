@@ -76,6 +76,8 @@ set wrap
 set formatoptions=qrn1
 set colorcolumn=-6,+1
 
+set viminfo^=!
+
 set visualbell
 
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc
@@ -330,6 +332,7 @@ nnoremap <leader>a :Ack!<space>
 
 " NERDTree
 nmap <leader>o :NERDTreeToggle<cr>
+nmap <leader>i :NERDTreeFind<cr>
 
 " Yank Ring
 nmap <leader>y :YRShow<cr>
@@ -405,28 +408,36 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kchmck/vim-coffee-script'
+au BufRead,BufNewFile *.coffee set filetype=coffee
 
 Bundle 'Spaceghost/vim-matchit'
 Bundle 'embear/vim-localvimrc'
+let g:localvimrc_name='.vimrc.local'
+let g:localvimrc_sandbox=0
+let g:localvimrc_ask=0
 
 Bundle 'altercation/vim-colors-solarized'
 colorscheme solarized
 
 " showmarks
-Bundle 'vim-scripts/ShowMarks'
-let g:showmarks_enable=1
-hi! link ShowMarksHLl LineNr
-hi! link ShowMarksHLu LineNr
-hi! link ShowMarksHLo LineNr
-hi! link ShowMarksHLm LineNr
-map ,kt <Plug>ShowmarksShowMarksToggle
-map ,ko <Plug>ShowmarksShowMarksOn
-map ,kh <Plug>ShowmarksClearMark
-map ,ka <Plug>ShowmarksClearAll
-map ,km <Plug>ShowmarksPlaceMark
+"Bundle 'vim-scripts/ShowMarks'
+"let g:showmarks_enable=1
+"hi! link ShowMarksHLl LineNr
+"hi! link ShowMarksHLu LineNr
+"hi! link ShowMarksHLo LineNr
+"hi! link ShowMarksHLm LineNr
+"map ,kt <Plug>ShowmarksShowMarksToggle
+"map ,ko <Plug>ShowmarksShowMarksOn
+"map ,kh <Plug>ShowmarksClearMark
+"map ,ka <Plug>ShowmarksClearAll
+"map ,km <Plug>ShowmarksPlaceMark
 
 Bundle 'vim-scripts/AutoComplPop'
 
 Bundle 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
+
+syn keyword myTodo TODO FIXME XXX REVIEW HACK OPTIMIZE contained
+syn keyword coffeeTodo TODO FIXME XXX REVIEW HACK OPTIMIZE contained
+hi def link myTodo Todo
