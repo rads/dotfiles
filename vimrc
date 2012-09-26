@@ -36,6 +36,7 @@ set number
 
 " Fix backups
 set undodir=~/.vim/tmp/undo//     " undo files
+set undofile
 set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 set backup
@@ -121,7 +122,6 @@ augroup trailing
 augroup END
 
 " Folding
-set foldlevelstart=0
 set foldmethod=syntax
 function! MyFoldText() " {{{
     let line = getline(v:foldstart)
@@ -346,10 +346,6 @@ nmap <LocalLeader>rs vip<LocalLeader>rs<CR>
 " Tagbar
 nmap <leader>t :TagbarToggle<CR>
 
-" NERDCommenter
-nmap <leader># :call NERDComment(0, "invert")<cr>
-vmap <leader># :call NERDComment(0, "invert")<cr>
-
 " Fugitive (Git)
 nmap <leader>g :Ggrep
 " ,f for global git serach for word under the cursor (with highlight)
@@ -365,7 +361,7 @@ let g:tagbar_type_scss = {
 	\ ]
 \ }
 
-"let g:Powerline_theme='skwp'
+let g:Powerline_theme='rads'
 let g:Powerline_colorscheme='skwp'
 
 Bundle 'mileszs/ack.vim'
@@ -392,9 +388,7 @@ Bundle 'zaiste/tmux.vim'
 Bundle 'benmills/vimux'
 Bundle 'majutsushi/tagbar'
 Bundle 'gregsexton/gitv'
-Bundle 'scrooloose/nerdcommenter'
-nmap gcc <plug>NERDCommenterToggle
-vmap gc <plug>NERDCommenterToggle
+Bundle 'tomtom/tcomment_vim'
 
 Bundle 'tpope/vim-fugitive'
 
@@ -438,6 +432,13 @@ Bundle 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 
+let g:LustyJugglerSuppressRubyWarning=1
+let g:LustyJugglerAltTabMode=1
+let g:LustyJugglerShowKeys='a' " show a/s/d/f keys 
+let g:LustyJugglerDefaultMappings=0
+map <leader>j :LustyJuggler<cr>
+
+" FIXME
 syn keyword myTodo TODO FIXME XXX REVIEW HACK OPTIMIZE contained
 syn keyword coffeeTodo TODO FIXME XXX REVIEW HACK OPTIMIZE contained
 hi def link myTodo Todo
