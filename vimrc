@@ -427,6 +427,7 @@ colorscheme solarized
 "map ,km <Plug>ShowmarksPlaceMark
 
 Bundle 'vim-scripts/AutoComplPop'
+Bundle 'vim-scripts/scratch.vim'
 
 Bundle 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_start_level=2
