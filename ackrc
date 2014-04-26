@@ -2,3 +2,5 @@
 --follow
 --type-set=markdown=.md,.markdown,.mkd
 --type-set=coffee=.coffee
+--type-set=scss=.scss
+--pager=less

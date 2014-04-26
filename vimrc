@@ -17,7 +17,7 @@ set hidden                        " Handle multiple buffers better.
 
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
-set wildignore+=*.o,*.obj,.git,*.pyc,*.class,build/**
+set wildignore+=*.o,*.obj,.git,*.pyc,*.class,build/**,*/node_modules/*
 
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
@@ -80,6 +80,9 @@ let g:ctrlp_working_path_mode=2
 let g:ctrlp_dotfiles=0
 let g:EasyMotion_mapping_b='_b'
 let g:MarkdownPreviewTMP=$HOME.'/.vim/tmp/'
+let g:vimroom_guibackground='#fdf6e2'
+let g:vimroom_ctermbackground=8
+let g:vimroom_width=60
 
 let mapleader=","
 let maplocalleader="\\"
@@ -87,6 +90,7 @@ set listchars=tab:>-,eol:$
 set shortmess=atI
 
 cd ~/t
+
 
 " Toggle paste mode
 nnoremap <F2> :set invpaste paste?<CR>
@@ -109,6 +113,8 @@ nnoremap ` '
 
 " Make Y yank to the end of the line, not the whole line
 nnoremap Y y$
+
+nnoremap <silent> <Leader>V :VimroomToggle
 
 " Remove trailing whitespace
 function! StripTrailingWhite()
@@ -161,7 +167,7 @@ if has('gui_running')
   set columns=71
   set lines=50
 
-  set guifont=Consolas:h18
+  set guifont=Consolas:h20
   set guioptions-=T               "kill toolbar
   set guioptions-=m               "kill menu
   set guioptions-=r               "kill right scrollbar

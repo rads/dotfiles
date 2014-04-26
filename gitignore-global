@@ -58,3 +58,9 @@ tmtags
 *.tar.gz
 *.zip
 *.bzip
+
+.tern-port
+.lein-repl-history
+.nrepl-port
+
+.agignore
