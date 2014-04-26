@@ -14,4 +14,16 @@ source $ZSH/oh-my-zsh.sh
 bindkey '^S' history-incremental-search-forward
 bindkey '^R' history-incremental-search-backward
 
+function git(){hub $@}
+alias g="git"
+alias gci="git commit"
+alias grb="git rebase"
+alias grbi="git rebase -i"
+alias gca="git commit --amend"
+alias gcm="git commit -m"
+alias gs="git status"
+alias gl="git log"
+alias gsave="git add . && git add -u && git commit -m '[REBASE] Save current progress'"
+alias gres="git reset HEAD~"
+
 [[ -f ~/.zshrc.local ]] && . ~/.zshrc.local

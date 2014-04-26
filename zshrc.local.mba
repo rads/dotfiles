@@ -36,18 +36,6 @@ alias tc="tmux show-buffer | pbcopy"
 export EDITOR="DYLD_FORCE_FLAT_NAMESPACE=1 /usr/local/Cellar/macvim/7.3-66/MacVim.app/Contents/MacOS/Vim -f"
 export CLOJURESCRIPT_HOME=/Users/rads/lib/clojurescript
 
-function git(){hub $@}
-alias g="git"
-alias gci="git commit"
-alias grb="git rebase"
-alias grbi="git rebase -i"
-alias gca="git commit --amend"
-alias gcm="git commit -m"
-alias gs="git status"
-alias gl="git log"
-alias gsave="git add . && git add -u && git commit -m '[REBASE] Save current progress'"
-alias gres="git reset HEAD~"
-
 # z
 . `brew --prefix`/etc/profile.d/z.sh
 function precmd () {
